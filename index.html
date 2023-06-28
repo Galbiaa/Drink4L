@@ -200,7 +200,13 @@
     
   </footer>
 <!-- Footer -->
-    <!-- End your project here-->   
+    <!-- End your project here-->
+    <script>
+      document.querySelector(".flip-card-container").addEventListener("click", function () {
+        const flipCard = this.querySelector(".flip-card");
+        flipCard.style.transform = flipCard.style.transform === "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)";
+      });
+    </script>
     <!-- MDB -->
     <script
       type="text/javascript"
