@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/recipe.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <title>Drink4L</title>
+        <!-- MDB icon -->
+        <link rel="icon" href="img/cocktail2.ico" type="image/x-icon" />
+        <!-- Font Awesome -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <!-- Google Fonts Roboto -->
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+        />
+        <!-- MDB -->
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
+          rel="stylesheet"
+        />
+    </head>
+<body onload="getDrinkById()" style="background-color: black;"> 
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: black; z-index: 9999999;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Drink4L</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+            </ul>
+            <form class="d-flex input-group w-auto form-outline form-white">
+              <input oninput="getDrinkList()" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+              <datalist id="datalistOptions">
+                
+              </datalist>
+              <a href="recipe.html">
+                <button
+                class="btn"
+                type="button"
+                data-mdb-ripple-color="light"
+                onclick="getDrinkByName()">
+              <i class="fas fa-search"></i>
+              </button>
+              </a>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <header>
+    </header>
+    <main>
+      <ul class="background" style="z-index: 1000;">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+     </ul>
+      <div class="container-fluid" style="color: white;">
+        <div class="row pt-5">
+          <div class="col-md-4" style="display: flex; justify-content: center;">
+            <div id="ingList" class="col-sm-6">
+
+            </div>
+          </div>
+            <div class="col-md-4">
+              <h1 id="recipeName" style="text-align: center;"></h1>
+              <br>
+              <div style="margin-bottom: 70px; text-align: center;">
+                <p id="recipeEN" style="font-size: 18px; "></p> 
+              </div>
+            </div>
+            <div class="col-md-4" style="display: flex; justify-content: center;">
+                <div id="carouselExampleCaptions" class="carousel slide custom-carousel" data-mdb-ride="carousel">
+                  <div id="ingredientsCheck" class="carousel-inner">
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="prev">
+                    <span style="margin-right: 20px;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCaptions" data-mdb-slide="next">
+                    <span style="margin-left: 20px;" class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+            </div>
+        </div>
+            <div class="row pt-5">
+                <div id="blobDiv" class="col-12" style="text-align: center; z-index: 9999;">
+                  <img class="thumbForm blob" id="recipeThumb" src="" style="width: 400px;">       
+                </div>
+            </div>
+      </div>
+    </main>
+    <footer class="bg-black text-center text-white" style="margin-top: 50px;">
+      <br><br><br><br><br>
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://it-it.facebook.com/" role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+  
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/login?lang=it" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+  
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiT4MKtrtX7AhUHndUKHUs-BNoYABAAGgJ3cw&ohost=www.google.com&cid=CAASJORoehihtQEvfq1emGz-f_X39IXuTqw7knzywPgkP3vM4QacDQ&sig=AOD64_09VUlZZc-9Pvhv8ByfwgQPNVKqzg&q&adurl&ved=2ahUKEwiAwrqtrtX7AhXCSPEDHVbTC44Q0Qx6BAgLEAE" role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+  
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+  
+          <!-- tiktok -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fit-IT&lang=en&enter_method=mandatory" role="button"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+  
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/login/it" role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+  
+        </section>
+        <!-- Section: Social media -->
+
+  
+        <!-- Section: Text -->
+        <section class="mb-4">
+          <p>
+            Drink4L is one of the largest and most popular cocktail sites in the world, 
+            boasting a collection of 600+ easy to learn and quick to search drinks, 
+            learn with us how to make a drink to perfection for your most magical nights.
+          </p>
+        </section>
+        <!-- Section: Text -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="">Federico Galbiati (THE G.O.A.T.)</a>
+        </div>
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      
+      <!-- Copyright -->
+      
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
+    ></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="js/cose.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datalist-css/dist/datalist-css.min.js"></script>
+</body>
+</html>
