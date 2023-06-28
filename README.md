@@ -1,2 +1,4 @@
 # Drink4L
-sdrogo
+sdrogo,
+se mi fotti il lavoro sei un merda
+come il lavoro che ho fatto
