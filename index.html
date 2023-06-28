@@ -202,10 +202,11 @@
 <!-- Footer -->
     <!-- End your project here-->
     <script>
-      const flipCardContainer = document.querySelector(".flip-card-container");
-      const flipCard = flipCardContainer.querySelector(".flip-card");
-      flipCardContainer.addEventListener("click", function () {
-        flipCard.classList.toggle("flipped");
+      var cards = document.querySelectorAll('.flip-card-container');
+      [...cards].forEach((card)=>{
+        card.addEventListener( 'click', function() {
+          card.classList.toggle('flip-card');
+        });
       });
     </script>
     <!-- MDB -->
