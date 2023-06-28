@@ -47,10 +47,6 @@
   perspective: 1000px;
 }
 
-.flip-card.flipped {
-  transform: rotateY(180deg);
-}
-
 /* .flip-card */
 .flip-card {
   width: inherit;
