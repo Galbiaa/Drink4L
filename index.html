@@ -204,15 +204,9 @@
     <script>
       const flipCardContainer = document.querySelector(".flip-card-container");
       const flipCard = flipCardContainer.querySelector(".flip-card");
-
       flipCardContainer.addEventListener("click", function () {
-        if (flipCard.style.transform === "rotateY(180deg)") {
-          flipCard.style.transform = "rotateY(0deg)";
-        } else {
-          flipCard.style.transform = "rotateY(180deg)";
-        }
+        flipCard.classList.toggle("flipped");
       });
-
     </script>
     <!-- MDB -->
     <script
